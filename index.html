@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>K-Town Weather</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="app">
+
+	<div class="container header text-center pb-3 pt-2">
+		<p>Happy Winters!</p>
+		<div class="area d-block mt-2">
+			<h4>Block-A</h4>
+		</div>
+		<div class="city d-block">
+			<h1>Karachi</h1>
+		</div>
+	</div>
+
+	<div class="container text-center pb-3">
+		<div class="current-temp pb-3">
+			<canvas class="icon" width="128" height="128"></canvas>
+			<div class="summary pb-1 description"></div>
+			<h2 class="temprature"><span class="current-temperature"></span>&deg;</h2>
+			<h6 class="real-feel">Feels like <span class="current-temperature-feels-like"></span>&deg;</h6>
+		</div>
+		<div class="other-details">
+			<div class="pb-3">
+			<div class="d-inline p-2">Humidity: <span class="humidity"></span>%</div>
+			<div class="d-inline p-2">Visibility: <span class="visibility"></span> Km</div>
+			<div class="d-inline p-2">Clouds: <span class="cloud-cover"></span></div>
+			</div>
+			<div class="pb-3">
+			<div class="d-inline p-2 ">UV Index: <span class="uvindex"></span></div>
+			<div class="d-inline p-2">Dew Point: <span class="dewpoint"></span>&deg;</div>
+			<div class="d-inline p-2">Precip: <span class="precipitation"></span></div>
+			</div>
+			<div class="pb-3">
+			<div class="d-inline p-2 ">Wind Gusts: <span class="windgusts"></span> kph</div>
+			<div class="d-inline p-2">Wind Speed: <span class="windspeed"></span> kph</div>
+			</div>
+			<div class="pb-3">
+			<div class="d-inline p-2">Pressure: <span class="pressure"></span> hPa</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container text-center pb-3">
+		<h3 class="">Air Quality</h3>
+		<span  id="city-aqi-container"></span> 
+	</div>
+</div>
+<!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="skycons.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
