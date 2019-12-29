@@ -63,7 +63,7 @@ window.addEventListener("load", () => {
 		return skycons.set(iconID, Skycons[currentIcon]);
 	}
 
-	const accu_api = `http://dataservice.accuweather.com/currentconditions/v1/260803?apikey=nXP46AASmAknwg4UkDqPCriY1Yldqon5&details=true`;
+	const accu_api = `https://dataservice.accuweather.com/currentconditions/v1/260803?apikey=nXP46AASmAknwg4UkDqPCriY1Yldqon5&details=true`;
 
 	fetch(accu_api)
 	.then(response => {
@@ -116,7 +116,7 @@ window.addEventListener("load", () => {
 	
 	})
 
-	const accu_forcast_api = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/260803?apikey=nXP46AASmAknwg4UkDqPCriY1Yldqon5&details=true&metric=true`;
+	const accu_forcast_api = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/260803?apikey=nXP46AASmAknwg4UkDqPCriY1Yldqon5&details=true&metric=true`;
 
 	fetch(accu_forcast_api)
 	.then(response => {
