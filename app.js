@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
    if ('serviceWorker' in navigator) {
         try {
-            navigator.serviceWorker.register('serviceWorker.js');
+            navigator.serviceWorker.register('./k-weather/serviceWorker.js');
             console.log('SW registered');
 
         } catch (error) {
