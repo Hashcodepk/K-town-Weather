@@ -1,14 +1,14 @@
 window.addEventListener("load", () => {
-   // if ('serviceWorker' in navigator) {
-   //      try {
-   //          navigator.serviceWorker.register('serviceWorker.js');
-   //          console.log('SW registered');
+   if ('serviceWorker' in navigator) {
+        try {
+            navigator.serviceWorker.register('serviceWorker.js');
+            console.log('SW registered');
 
-   //      } catch (error) {
-   //          console.log('SW failed');
+        } catch (error) {
+            console.log('SW failed');
 
-   //      }
-   //  }
+        }
+    }
     
 	let description = document.querySelector(".description");
 	let currentTemperature = document.querySelector(".current-temperature");
