@@ -6,10 +6,9 @@ const staticAssets = [
     './icon.png'
 ];  
 
-console.log("HI");
 
 self.addEventListener('install', async event => {
-    const cache = await caches.open('static-meme');
+    const cache = await caches.open('k-weather');
     cache.addAll(staticAssets);
 });
 
