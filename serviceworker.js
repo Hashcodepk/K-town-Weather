@@ -1,9 +1,9 @@
 const staticAssets = [
     './',
-    './css/styles.css',
-    './js/app.js',
-    './js/skycons.js',
-    './images/icons/icon.png'
+    './styles.css',
+    './app.js',
+    './skycons.js',
+    './icon.png'
 ];  
 
 self.addEventListener('install', async event => {
