@@ -1,14 +1,13 @@
 window.addEventListener("load", () => {
-   // if ('serviceWorker' in navigator) {
-   //      try {
-   //          navigator.serviceWorker.register('/k-weather/serviceWorker.js');
-   //          console.log('SW registered');
+    if ('serviceWorker' in navigator) {
+        try {
+            navigator.serviceWorker.register('sw.js');
+            console.log('SW registered');
 
-   //      } catch (error) {
-   //          console.log('SW failed');
-
-   //      }
-   //  }
+        } catch (error) {
+            console.log('SW failed');
+		}
+    }
     
 	let description = document.querySelector(".description");
 	let currentTemperature = document.querySelector(".current-temperature");
@@ -63,7 +62,7 @@ window.addEventListener("load", () => {
 		return skycons.set(iconID, Skycons[currentIcon]);
 	}
 
-	const accu_api = `https://dataservice.accuweather.com/currentconditions/v1/260803?apikey=AmbqTaTkXQlO55EdZjmDlTTApPaUA3hu&details=true`;
+	const accu_api = `https://dataservice.accuweather.com/currentconditions/v1/260803?apikey=SurGM538ksuF4wAkU1A11mwPGqBXDAWc&details=true`;
 
 	fetch(accu_api)
 	.then(response => {
@@ -116,7 +115,7 @@ window.addEventListener("load", () => {
 	
 	})
 
-	const accu_forcast_api = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/260803?apikey=AmbqTaTkXQlO55EdZjmDlTTApPaUA3hu&details=true&metric=true`;
+	const accu_forcast_api = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/260803?apikey=SurGM538ksuF4wAkU1A11mwPGqBXDAWc&details=true&metric=true`;
 
 	fetch(accu_forcast_api)
 	.then(response => {
