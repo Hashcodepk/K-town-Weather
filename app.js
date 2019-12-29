@@ -115,7 +115,7 @@ window.addEventListener("load", () => {
 	
 	})
 
-	const accu_forcast_api = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/260803?apikey=SurGM538ksuF4wAkU1A11mwPGqBXDAWc&details=true&metric=true`;
+	const accu_forcast_api = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/260803?apikey=SurGM538ksuF4wAkU1A11mwPGqBXDAWc&details=true&metric=true`;
 
 	fetch(accu_forcast_api)
 	.then(response => {
