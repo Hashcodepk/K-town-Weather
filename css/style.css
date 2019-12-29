@@ -39,3 +39,18 @@ body {
 .icon {
 	padding: -10px;
 }
+
+.past24 {
+	font-weight: bold;
+	font-size: larger;
+}
+
+.forcast-high,
+.forcast-low {
+	font-size: larger;
+}
+
+.day,
+.night {
+	font-size: small;
+}
