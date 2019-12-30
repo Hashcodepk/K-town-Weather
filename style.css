@@ -2,6 +2,8 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
@@ -12,12 +14,14 @@ body {
 	background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	font-family: 'Montserrat', sans-serif;
 	color: rgba(255,255,255, 0.8);
+	font-size: 1.1rem;
 }
 
 .city h1 {
 	font-weight: bolder;
 	letter-spacing: 3px;
-	text-shadow: 0px 0px 1px green;
+	text-shadow: 0px 0px 1px #F7F7F7, 0px 0px 2px #F7F7F7;
+
 }
 
 .area h4 {
@@ -26,11 +30,12 @@ body {
 }
 .summary {
 	letter-spacing: 1px;
+	margin-top: -20px;
 }
 
-.current-temperature {
+.current-temperature, .temprature {
 	font-weight: bolder;
-	font-size: larger;
+	font-size: 3rem;
 }
 
 .current-temperature-feels-like {
@@ -54,3 +59,39 @@ body {
 .night {
 	font-size: small;
 }
+
+.abc {
+	background-color: #243B55;
+}
+  
+.glow {
+	color: #EA9090;
+	text-shadow: 0px 0px 10px #ff005b,
+                    0px 0px 20px #ff005b,
+                    0px 0px 30px #ff005b,
+                    0px 0px 40px #ff005b;
+                    
+    animation: pulsating 3s infinite;                
+}
+
+@keyframes pulsating {
+                0% {
+                    text-shadow: 0px 0px 0px;
+                    opacity: 0;
+                }
+                50% {
+                    text-shadow: 0px 0px 10px #ff005b,
+                        0px 0px 20px #ff005b,
+                        0px 0px 30px #ff005b,
+                        0px 0px 40px #ff005b,
+                        0px 0px 50px #ff005b,
+                        0px 0px 60px #ff005b;
+                        
+                    opacity: 1;
+                }
+                100% {
+                    text-shadow: 0px 0px 0px;
+                    opacity: 0;
+                }
+            }
+
