@@ -36,32 +36,11 @@ window.addEventListener("load", () => {
 	let sunset = document.querySelector(".sunset");
 	let hos = document.querySelector(".hos");
 	let forcast = document.querySelector(".forcast");
+	let icon = document.querySelector(".icon");
 
 	
 
 	const proxy = "https://cors-anywhere.herokuapp.com/";
-	const api = `${proxy}https://api.darksky.net/forecast/9c49a2a83d8303815ab4ff58a644f7e7/24.932841,67.030406?units=ca`
-		
-			fetch(api)
-			.then (response => {
-				return response.json(); 
-			})
-			.then (data => {
-				const { summary, icon, } = data.currently;
-
-				//Setting Summary and Icon Elements From the API
-				description.textContent = summary;
-				setIcons(icon, document.querySelector(".icon"));
-
-			});
-
-	function setIcons(icon, iconID) {
-		const skycons = new Skycons({ color: "white" });
-		const currentIcon = icon.replace(/-/g, "_").toUpperCase();
-		skycons.play();
-		return skycons.set(iconID, Skycons[currentIcon]);
-	}
-
 	const accu_api = `https://dataservice.accuweather.com/currentconditions/v1/260803?apikey=SurGM538ksuF4wAkU1A11mwPGqBXDAWc&details=true`;
 
 	fetch(accu_api)
@@ -84,7 +63,9 @@ window.addEventListener("load", () => {
 			Wind,
 			Pressure,
 			Ceiling,
-			TemperatureSummary
+			TemperatureSummary,
+			WeatherText,
+			WeatherIcon
 		 } = data[0]
 
 
@@ -96,6 +77,14 @@ window.addEventListener("load", () => {
 		 let ws = Math.round(Wind.Speed.Metric.Value);
 		 let dp = Math.round(DewPoint.Metric.Value);
 
+		 // Weather Icon 
+		 if(WeatherIcon <= 8) {
+		 	icon.src = `https://uds-static.api.aero/weather/icon/lg/0${WeatherIcon}.png`;
+		 } else {
+		 	icon.src = `https://uds-static.api.aero/weather/icon/lg/${WeatherIcon}.png`;
+		 }
+
+		description.textContent = WeatherText;
 		currentTemperature.textContent = temp;
 		feels.textContent = tempfeels;
 		feelsshade.textContent = tempfeelshade;
