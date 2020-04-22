@@ -2,10 +2,8 @@ window.addEventListener("load", () => {
     if ('serviceWorker' in navigator) {
         try {
             navigator.serviceWorker.register('sw.js');
-            console.log('SW registered');
-
         } catch (error) {
-            console.log('SW failed');
+            console.log('SW failed :(');
 		}
     }
     
@@ -26,6 +24,7 @@ window.addEventListener("load", () => {
 	let press = document.querySelector(".pressure");
 	let ceil = document.querySelector(".ceiling");
 	let past24 = document.querySelector(".past24");
+	let past24Max = document.querySelector(".past24Max");
 	let forcastHigh = document.querySelector(".forcast-high");
 	let forcastHighFeel = document.querySelector(".forcast-high-feel");
 	let forcastLow = document.querySelector(".forcast-low");
@@ -67,8 +66,8 @@ window.addEventListener("load", () => {
 			WeatherText,
 			WeatherIcon
 		 } = data[0]
-
-
+			
+		
 		 // CONVERSIONS
 		 let temp = Math.round(Temperature.Metric.Value);
 		 let tempfeels = Math.round(RealFeelTemperature.Metric.Value);
@@ -76,6 +75,7 @@ window.addEventListener("load", () => {
 		 let wg = Math.round(WindGust.Speed.Metric.Value);
 		 let ws = Math.round(Wind.Speed.Metric.Value);
 		 let dp = Math.round(DewPoint.Metric.Value);
+		 let visibround = Math.round(Visibility.Metric.Value);
 
 		 // Weather Icon 
 		 if(WeatherIcon <= 8) {
@@ -89,7 +89,7 @@ window.addEventListener("load", () => {
 		feels.textContent = tempfeels;
 		feelsshade.textContent = tempfeelshade;
 		humid.textContent = RelativeHumidity;
-		visib.textContent = Visibility.Metric.Value;
+		visib.textContent = visibround;
 		cloud.textContent = CloudCover;
 		uv.textContent = UVIndex;
 		uvt.textContent = UVIndexText;
@@ -101,7 +101,7 @@ window.addEventListener("load", () => {
 		press.textContent = Pressure.Metric.Value;
 		ceil.textContent = Ceiling.Metric.Value;
 		past24.textContent = TemperatureSummary.Past24HourRange.Minimum.Metric.Value
-	
+		past24Max.textContent = TemperatureSummary.Past24HourRange.Maximum.Metric.Value
 	})
 
 	const accu_forcast_api = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/260803?apikey=SurGM538ksuF4wAkU1A11mwPGqBXDAWc&details=true&metric=true`;
@@ -112,7 +112,6 @@ window.addEventListener("load", () => {
 	})
 	.then(data => {
 		// CONVERSiONS
-
 		function Unix_to_norm(t)
 		{
 		var dt = new Date(t*1000);
@@ -143,6 +142,8 @@ window.addEventListener("load", () => {
 		sunset.textContent = set;
 		hos.textContent = data.DailyForecasts[0].HoursOfSun;
 		forcast.textContent = data.Headline.Text;
+
+		console.log('Hi, how can i help you? :)')
 	})	
 
 

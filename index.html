@@ -8,13 +8,13 @@
 	<title>K-Town Weather</title>
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="icon" href="icon.png" sizes="16x16" type="image/png">
 	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
 	<div class="app">
 
 	<div class="container header text-center pb-2 pt-2">
-		<p class="glow">Happy Winters!</p>
 		<div class="area d-block mt-2">
 			<h4>Block-A</h4>
 		</div>
@@ -26,7 +26,7 @@
 	<div class="container text-center pb-3">
 		<div class="current-temp pb-3">
 			<!-- <canvas class="icon" width="128" height="128"></canvas> -->
-			<img class="icon" />
+			<img class="icon pb-2" />
 			<div class="summary pb-1 description text-center"></div>
 			<h2 class="temprature"><span class="current-temperature">...</span>&deg;</h2>
 			<h6 class="real-feel">Feels like <span class="current-temperature-feels-like"></span>&deg;</h6>
@@ -56,7 +56,7 @@
 						<span class="d-block"><span class="sunset"></span></span>
 					</div> 
 					<div class="col-12">
-						<span class="d-block pt-2">Hours Of Sun:</span>
+						<span class="d-block pt-2">Hours of sun:</span>
 						<span class="d-block"><span class="hos"></span></span>
 					</div> 
 				</div>
@@ -83,15 +83,19 @@
 			</div>
 			<div class="pb-3">
 			<div class="d-blcok pt-2 font-weight-bold">Minimum Temperature Past 24h:</div>
-			<div class="d-blcok pb-2"><span class="past24"></span>&deg;</div>
-			<div class="d-blcok p-2 font-weight-bold">Forecast:</div>
-			<div class="d-blcok pb-2"><span class="forcast"></span></div>
+			<div class="d-blcok"><span class="past24"></span>&deg;</div>
+			<div class="d-blcok pt-2 font-weight-bold">Maximum Temperature Past 24h:</div>
+			<div class="d-blcok pb-2"><span class="past24Max"></span>&deg;</div>
+			<!-- <div class="d-blcok p-2 font-weight-bold">Forecast:</div>
+			<div class="d-blcok pb-2"><span class="forcast"></span></div> -->
 			</div>
 		</div>
 	</div>
 	
 	<div class="container text-center pb-3">
 		<h3 class="font-weight-bold">Air Quality</h3>
+		<div class="d-blcok p-2 font-weight-bold">Forecast:</div>
+			<div class="d-blcok pb-3"><span class="forcast"></span></div>
 		<span  id="city-aqi-container"></span> 
 	</div>
 </div>
